@@ -1,6 +1,6 @@
 from table import *
 from table import table
-from node import node
+from node import Node
 
 
 def parseInput(numbers):
@@ -11,9 +11,11 @@ def main():
     numbers = input()
     parsedNumbers = parseInput(numbers)
     x = table(parsedNumbers)
-    x.format()
-    y = node(x, None)
-    print(y.costH)
+    y = Node(x)
+    print()
+    y.table.format()
+    print()
+    y.genSuccessors()
 
 
 if (__name__ == "__main__"):
