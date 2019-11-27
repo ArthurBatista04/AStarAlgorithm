@@ -175,7 +175,7 @@ class Node:
 
     def h4(self):
         table = self.table
-        return 0.7*self.h1() + 0.1*self.h2() + 0.3*self.h3()
+        return 0.7*self.h1() + 0.1*self.h2() + 0.2*self.h3()
 
     def h5(self):
         return max(self.h1(), self.h2(), self.h3())
