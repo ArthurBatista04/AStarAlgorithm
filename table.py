@@ -1,5 +1,3 @@
-
-
 class table(object):
     def __init__(self, numbers):
         self.blankSpace = 0
@@ -21,6 +19,7 @@ class table(object):
         return numbersOutput
 
     def format(self):
+        print()
         for i in range(4):
             for j in range(4):
                 print(self.numbers[i][j], end=" ")
