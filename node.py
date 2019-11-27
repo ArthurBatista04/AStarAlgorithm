@@ -6,7 +6,7 @@ class Node:
     def __init__(self, table, gValue=0, realParent=None):
         self.table = table
         self.gValue = gValue
-        self.heuristic = self.h2()
+        self.heuristic = self.h5()
         self.data = self.gValue + self.heuristic
         self.parent = None
         self.left = None
@@ -172,3 +172,10 @@ class Node:
 
     def h3(self):
         return self.table.manhattan
+
+    def h4(self):
+        table = self.table
+        return 0.7*self.h1() + 0.1*self.h2() + 0.3*self.h3()
+
+    def h5(self):
+        return max(self.h1(), self.h2(), self.h3())
