@@ -2,7 +2,17 @@ class table(object):
     def __init__(self, numbers):
         self.blankSpace = 0
         self.numberOfCorrectPieces = 0
+        self.sequenceOfCorrectPieces = self.sequence(numbers)
         self.numbers = self.initTable(numbers)
+
+    def sequence(self, numbers):
+        num = int(numbers[0])
+        correct = 1
+        for i in range(1, len(numbers) - 1):
+            if num+1 == int(numbers[i+1]) or num == 0:
+                correct += 1
+            num = int(numbers[i+1])
+        return 16 - correct
 
     def initTable(self, numbers):
         numbersOutput = []

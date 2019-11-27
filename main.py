@@ -13,15 +13,15 @@ def aStarAlgorithm(S):
     while True:
         v = heappop(heap)[1]
         F.update({str(v.table.numbers): S})
+        if str(v.table.numbers) in A:
+            A.pop(str(v.table.numbers))
         if v.table.numberOfCorrectPieces == 15:
             finished = True
             break
         successors = v.genSuccessors()
         for child in successors:
             if str(child.table.numbers) in A and child.data < A[str(child.table.numbers)].data:
-                oldChild = A[str(child.table.numbers)]
                 A.pop(str(child.table.numbers))
-                heap.remove((oldChild.data, oldChild))
             if not str(child.table.numbers) in A and not str(child.table.numbers) in F:
                 A.update({str(child.table.numbers): child})
                 heappush(heap, (child.data, child))
