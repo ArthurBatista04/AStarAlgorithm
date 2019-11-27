@@ -17,7 +17,7 @@ class table(object):
                 d = rightPosition[number][1]
                 distance+= abs(a - c) + abs(b - d)
         return distance
-        
+
     def sequence(self, numbers):
         num = int(numbers[0])
         correct = 1
@@ -25,7 +25,7 @@ class table(object):
             if num+1 == int(numbers[i+1]) or num == 0:
                 correct += 1
             num = int(numbers[i+1])
-        return 16 - correct
+        return correct
 
     def initTable(self, numbers):
         numbersOutput = []
