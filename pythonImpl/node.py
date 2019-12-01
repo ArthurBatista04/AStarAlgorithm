@@ -6,7 +6,7 @@ class Node:
     def __init__(self, table, gValue=0, realParent=None):
         self.table = table
         self.gValue = gValue
-        self.heuristic = self.h5()
+        self.heuristic = self.h1()
         self.data = self.gValue + self.heuristic
         self.parent = None
         self.left = None

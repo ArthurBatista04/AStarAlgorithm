@@ -4,7 +4,7 @@ class table(object):
         self.numberOfCorrectPieces = 0
         self.sequenceOfCorrectPieces = self.sequence(numbers)
         self.numbers = self.initTable(numbers)
-        self.manhattan = self.manhattanDistance()
+        #self.manhattan = self.manhattanDistance()
     
     def manhattanDistance(self):
         rightPosition = {0:(0,0),1:(0,1),2:(0,2),3:(0,3),4:(1,0),5:(1,2),6:(1,3),7:(2,3),8:(2,0),9:(2,1),10:(2,2),11:(2,3),12:(3,0),13:(3,1),14:(3,2),15:(3,3)}
@@ -36,8 +36,9 @@ class table(object):
                 if numbers[i] == '0':  # finds the position of the blank space
                     self.blankSpace = (j, (i % 4))
                 # counts the number of pieces that are in the correct place
-                if numbers[i] == str(i+1):
-                    self.numberOfCorrectPieces += 1
+                if numbers[i] == str(i+1) :
+                    self.numberOfCorrectPieces = self.numberOfCorrectPieces + 1
+                
             numbersOutput.append(line)
         return numbersOutput
 
